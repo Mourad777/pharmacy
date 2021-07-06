@@ -27,7 +27,7 @@ function App() {
         <Layout selectedPatient={selectedPatient} >
           <Switch>
             {/* <Route handleSelectedPatient={handleSelectedPatient} selectedPatient={selectedPatient} exact path="/" exact component={Home} /> */}
-            <Route exact path="/" render={(props) => <Patients setPatient={handleSelectedPatient} {...props} />} />
+            <Route exact path="/" render={(props) => <Patients setPatient={handleSelectedPatient} selectedPatient={selectedPatient} {...props} />} />
             <Route exact path="/new-file" render={(props) => <NewFile setPatient={handleSelectedPatient} {...props} />} />
             <Route exact path="/drugs" render={(props) => <Drugs setPatient={handleSelectedPatient} {...props} />} />
             <Route exact path="/support" render={(props) => <Support setPatient={handleSelectedPatient} {...props} />} />

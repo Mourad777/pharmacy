@@ -79,31 +79,34 @@ const LayoutWrapper = ({ children, selectedPatient }) => {
                         <Breadcrumb.Item>List</Breadcrumb.Item>
                         <Breadcrumb.Item>App</Breadcrumb.Item>
                     </Breadcrumb> */}
-                    <Content
-                        className="site-layout-background"
-                        style={{
-                            padding: 24,
-                            margin: '20px 0 0 0',
-                            // minHeight: 280,
-                        }}
-                    >
-                        {children}
-                    </Content>
-                    <Content
-                        className="site-layout-background"
-                        style={{
-                            padding: 24,
-                            margin: '20px 0 0 0',
-                            minHeight: 280,
-                        }}
-                    >
-                        {panel === 1 && selectedPatient && (<FileSummary />)}
-                        {panel === 2 && selectedPatient && (<NewPrescription />)}
-                        {panel === 3 && selectedPatient && (<MedicationHistory />)}
-                        {panel === 4 && selectedPatient && (<Insurance />)}
-                        {panel === 5 && selectedPatient && (<CreateDispil />)}
-                        {panel === 6 && selectedPatient && (<PrescriptionTransfer />)}
-                    </Content>
+                    <div style={{ display: 'flex' }}>
+                        <Content
+                            className="site-layout-background"
+                            style={{
+                                padding: 24,
+                                margin: '20px 0 0 0',
+                                minHeight: 280,
+                            }}
+                        >
+                            {panel === 1 && selectedPatient && (<FileSummary />)}
+                            {panel === 2 && selectedPatient && (<NewPrescription />)}
+                            {panel === 3 && selectedPatient && (<MedicationHistory />)}
+                            {panel === 4 && selectedPatient && (<Insurance />)}
+                            {panel === 5 && selectedPatient && (<CreateDispil />)}
+                            {panel === 6 && selectedPatient && (<PrescriptionTransfer />)}
+                        </Content>
+                        <Content
+                            className="site-layout-background"
+                            style={{
+                                padding: 24,
+                                margin: '20px 0 0 0',
+                                maxWidth:'50%'
+                                // minHeight: 280,
+                            }}
+                        >
+                            {children}
+                        </Content>
+                    </div>
                 </Layout>
             </Layout>
         </Layout>
